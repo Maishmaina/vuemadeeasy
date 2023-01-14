@@ -5,11 +5,22 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
-	<title>Vue js</title>
+	<title>Vue js Data binding</title>
+	<style type="text/css">
+		.one{
+			background: red;
+		}
+
+		.two{
+text-decoration: line-through;
+		}
+	</style>
 </head>
 <body>
 <div id="app">
-	<h1>{{ name }}</h1>
+	<a v-bind:href="address">Vue Home</a>
+	<h1 :class="classes">Tutor got data</h1>
+	<input type="text" v-bind:value="name">
 </div>
 
 <!-- <script src="app.js"></script> -->
@@ -17,8 +28,10 @@
 	let app=new Vue({
 	el: '#app',
 	data: {
-		name:'Akisolve Solutions'
-	}
+		address:'https://vuejs.org',
+		classes:['one','two'],
+		name:'data binding'
+	},
 })
 </script>
 </body>

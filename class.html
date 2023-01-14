@@ -5,11 +5,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
-	<title>Vue js</title>
+	<title>Vue js classes</title>
 </head>
 <body>
 <div id="app">
-	<h1>{{ name }}</h1>
+	<h1>{{ MainMethod() }}</h1>
+	<h1>{{ MainMethodAge(10) }}</h1>
 </div>
 
 <!-- <script src="app.js"></script> -->
@@ -18,6 +19,14 @@
 	el: '#app',
 	data: {
 		name:'Akisolve Solutions'
+	},
+	methods:{
+		MainMethod(){
+			return "Component and method development"
+		},
+		MainMethodAge(ag){
+			return `${this.name} and My Age is ${ag}`;
+		}
 	}
 })
 </script>
