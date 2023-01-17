@@ -5,32 +5,44 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
-	<title>Vue js Data binding</title>
-	<style type="text/css">
-		.one{
-			background: red;
-		}
-
-		.two{
-text-decoration: line-through;
-		}
-	</style>
+	<title>Vue js Object Events</title>
+<style type="text/css">
+	.canva{
+		height: 240px;
+		width: 240px;
+		margin: 20px;
+		background-color: purple;
+		color: white;
+	}
+</style>
 </head>
 <body>
 <div id="app">
-	<a v-bind:href="address">Vue Home</a>
-	<h1 :class="classes">Tutor got data</h1>
-	<input type="text" v-bind:value="name">
+	<button @click="Me">Click me</button>
+	<div class="canva" v-on:mousemove="over">
+		{{log.x}} , {{log.y}}
+	</div>
 </div>
 <!-- <script src="app.js"></script> -->
 <script type="text/javascript">
 	let app=new Vue({
 	el: '#app',
 	data: {
-		address:'https://vuejs.org',
-		classes:['one','two'],
-		name:'data binding'
+		log:{
+			x:0,
+			y:0
+		}
 	},
+	methods:{
+		Me(e){
+			console.log(e)
+		},
+		over(e){
+			this.log.x=e.offsetX,
+			this.log.y=e.offsetY
+
+		}
+	}
 })
 </script>
 </body>

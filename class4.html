@@ -5,32 +5,28 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
-	<title>Vue js Data binding</title>
-	<style type="text/css">
-		.one{
-			background: red;
-		}
-
-		.two{
-text-decoration: line-through;
-		}
-	</style>
+	<title>Vue js Events</title>
 </head>
 <body>
 <div id="app">
-	<a v-bind:href="address">Vue Home</a>
-	<h1 :class="classes">Tutor got data</h1>
-	<input type="text" v-bind:value="name">
+	<h1>for your Information i earn {{dollar}} $ per month</h1>
+
+	<button @click="dollar++">+1</button>
+	<button v-on:click="Amount(-1)">-1</button>
+
 </div>
 <!-- <script src="app.js"></script> -->
 <script type="text/javascript">
 	let app=new Vue({
 	el: '#app',
 	data: {
-		address:'https://vuejs.org',
-		classes:['one','two'],
-		name:'data binding'
+		dollar:120
 	},
+	methods:{
+		Amount(kshs){
+			this.dollar +=kshs
+		}
+	}
 })
 </script>
 </body>
