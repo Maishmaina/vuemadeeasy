@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
+	<title>Vue js if else</title>
+	
+</head>
+<body>
+<div id="app">
+	<p v-if="message">This is the true</p>
+	<p v-if="age">20</p>
+	<!-- <p v-else-if="age">20</p> -->
+	<button @click="showData">Show Name | {{message}}</button>
+	<button @click="showAge">Show Name | {{age}}</button>
+</div>
+<!-- <script src="app.js"></script> -->
+<script type="text/javascript">
+	let app=new Vue({
+	el: '#app',
+	data: {
+		message:false,
+		age:true
+
+	},
+	methods:{
+		showData(){
+			this.message=!this.message
+		},
+		showAge(){
+			this.age=!this.age
+		}
+	}
+})
+</script>
+</body>
+</html>
