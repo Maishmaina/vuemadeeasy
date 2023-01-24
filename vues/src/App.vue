@@ -1,16 +1,35 @@
 <template>
 <div id="app">
   <h2>{{title}}</h2>
+  <Navbar></Navbar>
+  <AllFriends :friends="friends"></AllFriends>
+  <OnelineFriends :friends="friends"></OnelineFriends>
 </div>
 </template>
 <script>
+import Navbar from './components/Navbar.vue'
+import AllFriends from './components/AllFriends.vue'
+import OnelineFriends from './components/OnelineFriends.vue'
+
+
 export default {
   name: 'App',
-
   data(){
     return {
-      title:'Title vue app running'
+      title:'Title vue app running',
+      friends:[
+          {name:'A',online:true},
+          {name:'B',online:false},
+          {name:'C',online:true},
+          {name:'D',online:false},
+          {name:'E',online:true}
+          ]
     }
+  },
+  components:{
+    Navbar,
+    AllFriends,
+    OnelineFriends
   }
 }
 </script>
