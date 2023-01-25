@@ -19,5 +19,7 @@
 	}
 </script>
 <style scoped>
-
+#onlinefriends{
+	display: none;
+}
 </style>

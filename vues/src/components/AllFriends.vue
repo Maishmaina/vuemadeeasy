@@ -2,7 +2,7 @@
 	<div id="allfriends">
 		<h2>All frinds</h2>
 		<div v-for="(friend,index) in friends" :key="index">
-			<h6>{{friend.name}}</h6>
+			<h6 @click="unfriend(friend.name)">{{friend.name}}</h6>
 		</div>
 	</div>
 </template>
@@ -14,8 +14,14 @@
 			return{
 				
 			}
+		},
+		methods:{
+			unfriend(name){
+				this.$emit('delete',{name})
+			}
 		}
 	}
+	
 </script>
 <style scoped>
 h6 {
@@ -24,5 +30,8 @@ h6 {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+#allfriends{
+	display: none;
 }
 </style>

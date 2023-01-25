@@ -2,14 +2,16 @@
 <div id="app">
   <h2>{{title}}</h2>
   <Navbar></Navbar>
-  <AllFriends :friends="friends"></AllFriends>
+  <AllFriends :friends="friends" @delete="deleteFriend"></AllFriends>
   <OnelineFriends :friends="friends"></OnelineFriends>
+  <HookWStudy></HookWStudy>
 </div>
 </template>
 <script>
 import Navbar from './components/Navbar.vue'
 import AllFriends from './components/AllFriends.vue'
 import OnelineFriends from './components/OnelineFriends.vue'
+import HookWStudy from "./components/Hook.vue"
 
 
 export default {
@@ -29,9 +31,19 @@ export default {
   components:{
     Navbar,
     AllFriends,
-    OnelineFriends
+    OnelineFriends,
+    HookWStudy
+  },
+  methods:{
+    deleteFriend(payload){
+        // console.log(payload);
+      this.friends=this.friends.filter(friend=>{
+        return friend.name !== payload.name
+      })
+    }
   }
 }
+
 </script>
 <style>
 #app {
@@ -42,4 +54,23 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+/*
+VUEJS PATH 
+study line
+
+->Pass props from parent to child.
+->Pass props from child to parent.
+->Lifecycle event Hook.options beroreCreate,
+->
+->
+->
+->
+->
+->
+->
+->
+->
+
+*/
 </style>
