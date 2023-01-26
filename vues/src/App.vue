@@ -4,14 +4,16 @@
   <Navbar></Navbar>
   <AllFriends :friends="friends" @delete="deleteFriend"></AllFriends>
   <OnelineFriends :friends="friends"></OnelineFriends>
-  <HookWStudy></HookWStudy>
+  <AxiosResult></AxiosResult>
 </div>
 </template>
 <script>
+
 import Navbar from './components/Navbar.vue'
 import AllFriends from './components/AllFriends.vue'
 import OnelineFriends from './components/OnelineFriends.vue'
-import HookWStudy from "./components/Hook.vue"
+// import HookWStudy from "./components/Hook.vue"
+import AxiosResult from "./components/Axios.vue"
 
 
 export default {
@@ -32,7 +34,7 @@ export default {
     Navbar,
     AllFriends,
     OnelineFriends,
-    HookWStudy
+    AxiosResult
   },
   methods:{
     deleteFriend(payload){
@@ -62,8 +64,8 @@ study line
 ->Pass props from parent to child.
 ->Pass props from child to parent.
 ->Lifecycle event Hook.options beroreCreate,
-->
-->
+->Axios call request
+-> vue filter removed in vuejs 3 issue
 ->
 ->
 ->
