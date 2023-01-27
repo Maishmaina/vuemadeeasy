@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 
-//Globally filters created
+//Globally filters created |snippet
 
 // Vue.filter('snippet',val=>{
 // 	if(!val || typeof(val) !='string') return ''

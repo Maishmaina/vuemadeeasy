@@ -1,6 +1,6 @@
 <template>
 <h1>{{axiost}}</h1><hr/>
-
+<input type="text" v-model="searchTeam" placeholder="Search">
 	<table>
 		<thead>
 			<tr>
@@ -10,15 +10,13 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr v-for="post in posts" :key="post.id">
+			<tr v-for="post in filtersearch" :key="post.id">
 				<td>{{post.id}}</td>
 				<td>{{post.title}}</td>
 				<td>{{post.body}}</td>
 			</tr>
 		</tbody>
 	</table>
-
-
 </template>
 <script>
 	import axios from "axios"
@@ -27,7 +25,15 @@
 		data(){
 			return{
 				axiost:"Axios Request",
-				posts:[]
+				posts:[],
+				searchTeam: ''
+			}
+		},
+		computed:{
+			filtersearch(){
+				return this.posts.filter(post=>{
+					return post.title.match(this.searchTeam)
+				})
 			}
 		},
 		methods:{
