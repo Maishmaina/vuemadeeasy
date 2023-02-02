@@ -23,7 +23,8 @@ export default new Router({
       path: '/contact',
       name: 'Contact',
       component: Contact
-    },{
+    },
+    {
       path:'/profile/:user_id',
       name: 'Profile',
       component: Profile

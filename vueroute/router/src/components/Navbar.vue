@@ -7,7 +7,16 @@
 <li> <router-link to="/contact">Contact</router-link></li>
 		</ul>
 		</nav>
+<div>
+	<ul>
+		<li v-for="(id,index) in userIds" :key="index">
+			<router-link :to="{name:'Profile',params:{user_id: id}}">Profile {{id}}</router-link>
+		</li>
+	</ul>
 
+	<button @click="Contact">Contact</button>
+	<button @click="About">About</button>
+</div>
 	</div>
 </template>
 <script>
@@ -15,7 +24,15 @@
 		name:'NavBar',
 		data(){
 			return{
-
+				userIds:['1','2','3','4','5','6','7','8','9']
+			}
+		},
+		methods:{
+			Contact(){
+				this.$router.push({name:'Contact'})
+			},
+			About(){
+				this.$router.push({name:'About'})
 			}
 		}
 	}
