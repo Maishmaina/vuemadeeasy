@@ -38,7 +38,6 @@
 		},
 		methods:{
 
-
 		},
 		created(){
 			axios.get('https://jsonplaceholder.typicode.com/posts')
