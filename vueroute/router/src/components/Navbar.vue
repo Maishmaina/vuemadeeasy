@@ -13,7 +13,6 @@
 			<router-link :to="{name:'Profile',params:{user_id: id}}">Profile {{id}}</router-link>
 		</li>
 	</ul>
-
 	<button @click="Contact">Contact</button>
 	<button @click="About">About</button>
 </div>
@@ -49,5 +48,8 @@ nav li {
 	list-style-type: none;
 	margin: 0;
 	padding: 8px;
+}
+a.router-link-exact-active{
+	color: red;
 }
 </style>
